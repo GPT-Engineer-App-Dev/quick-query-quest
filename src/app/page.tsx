@@ -1,3 +1,4 @@
+import React from 'react';
 import RecipeList from '@/components/RecipeList';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
