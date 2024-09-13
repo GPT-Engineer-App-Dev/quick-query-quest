@@ -28,7 +28,7 @@ const recipes: RecipeData[] = [
     ],
     prepTime: "20 mins",
     servings: 2,
-    image: "https://source.unsplash.com/random/800x600/?pasta"
+    image: "https://source.unsplash.com/random/800x600/?spaghetti-carbonara"
   },
   {
     id: 2,
@@ -44,7 +44,53 @@ const recipes: RecipeData[] = [
     ],
     prepTime: "30 mins",
     servings: 4,
-    image: "https://source.unsplash.com/random/800x600/?pizza"
+    image: "https://source.unsplash.com/random/800x600/?margherita-pizza"
+  },
+  {
+    id: 3,
+    title: "Grilled Salmon with Lemon-Dill Sauce",
+    ingredients: ["4 salmon fillets", "2 tbsp olive oil", "1 lemon", "2 tbsp fresh dill", "Salt and pepper", "1/4 cup Greek yogurt"],
+    instructions: [
+      "Preheat grill to medium-high heat",
+      "Brush salmon with olive oil and season with salt and pepper",
+      "Grill salmon for 4-5 minutes per side",
+      "Mix Greek yogurt with lemon juice and chopped dill",
+      "Serve salmon with lemon-dill sauce"
+    ],
+    prepTime: "25 mins",
+    servings: 4,
+    image: "https://source.unsplash.com/random/800x600/?grilled-salmon"
+  },
+  {
+    id: 4,
+    title: "Vegetarian Buddha Bowl",
+    ingredients: ["Quinoa", "Roasted chickpeas", "Avocado", "Roasted sweet potato", "Kale", "Hummus", "Tahini dressing"],
+    instructions: [
+      "Cook quinoa according to package instructions",
+      "Roast chickpeas and sweet potato cubes in the oven",
+      "Massage kale with olive oil and lemon juice",
+      "Assemble bowl with quinoa, roasted veggies, kale, and avocado",
+      "Top with hummus and drizzle with tahini dressing"
+    ],
+    prepTime: "40 mins",
+    servings: 2,
+    image: "https://source.unsplash.com/random/800x600/?buddha-bowl"
+  },
+  {
+    id: 5,
+    title: "Chocolate Lava Cake",
+    ingredients: ["100g dark chocolate", "100g butter", "2 eggs", "2 egg yolks", "100g sugar", "50g flour", "Vanilla ice cream"],
+    instructions: [
+      "Preheat oven to 400°F (200°C)",
+      "Melt chocolate and butter together",
+      "Whisk eggs, egg yolks, and sugar until light and fluffy",
+      "Fold in melted chocolate and flour",
+      "Pour into greased ramekins and bake for 12-14 minutes",
+      "Serve warm with a scoop of vanilla ice cream"
+    ],
+    prepTime: "25 mins",
+    servings: 4,
+    image: "https://source.unsplash.com/random/800x600/?chocolate-lava-cake"
   }
 ];
 
