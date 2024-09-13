@@ -1,8 +1,10 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import Recipe from './Recipe';
+import AddRecipeForm from './AddRecipeForm';
 import { motion } from 'framer-motion';
+import { Button } from '@/components/ui/button';
 
 interface RecipeData {
   id: number;
@@ -14,7 +16,7 @@ interface RecipeData {
   image: string;
 }
 
-const recipes: RecipeData[] = [
+const initialRecipes: RecipeData[] = [
   {
     id: 1,
     title: "Spaghetti Carbonara",
@@ -95,25 +97,39 @@ const recipes: RecipeData[] = [
 ];
 
 const RecipeList: React.FC = () => {
+  const [recipes, setRecipes] = useState<RecipeData[]>(initialRecipes);
+  const [showForm, setShowForm] = useState(false);
+
+  const handleAddRecipe = (newRecipe: RecipeData) => {
+    setRecipes([...recipes, newRecipe]);
+    setShowForm(false);
+  };
+
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {recipes.map((recipe, index) => (
-        <motion.div
-          key={recipe.id}
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: index * 0.1 }}
-        >
-          <Recipe
-            title={recipe.title}
-            ingredients={recipe.ingredients}
-            instructions={recipe.instructions}
-            prepTime={recipe.prepTime}
-            servings={recipe.servings}
-            image={recipe.image}
-          />
-        </motion.div>
-      ))}
+    <div className="space-y-8">
+      <Button onClick={() => setShowForm(!showForm)} className="mb-4">
+        {showForm ? 'Hide Form' : 'Add New Recipe'}
+      </Button>
+      {showForm && <AddRecipeForm onAddRecipe={handleAddRecipe} />}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {recipes.map((recipe, index) => (
+          <motion.div
+            key={recipe.id}
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+          >
+            <Recipe
+              title={recipe.title}
+              ingredients={recipe.ingredients}
+              instructions={recipe.instructions}
+              prepTime={recipe.prepTime}
+              servings={recipe.servings}
+              image={recipe.image}
+            />
+          </motion.div>
+        ))}
+      </div>
     </div>
   );
 };
